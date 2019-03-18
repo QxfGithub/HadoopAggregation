@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: hadoop
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+server:
+  port: 9001
+
+
+hdfs:
+  path: hdfs://10.59.74.192:9000
+  username: root

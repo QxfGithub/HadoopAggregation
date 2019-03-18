@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @version 0.0.1
  */
 @RestController
-@RequestMapping(value = "/baseOperate")
+@RequestMapping(value = "/Hbase/baseOperate")
 @Api(tags = "BaseOperateController", description = "基础操作接口")
 public class BaseOperateController {
 

@@ -1,4 +1,4 @@
-package com.qxf.hadoop.hbase;
+package com.qxf.hadoop.hdfs;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,13 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @version 0.0.1
  */
 @SpringBootApplication
-public class HbaseServerApplication {
+public class HdfsServerApplication {
 
-    public static void main(String[] args) {
-
-        SpringApplication.run(HbaseServerApplication.class,args);
-    }
-
+	public static void main(String[] args) {
+		SpringApplication.run(HdfsServerApplication.class, args);
+	}
 }
-
-
