@@ -11,6 +11,7 @@
     <modules>
         <module>HBase</module>
         <module>Hdfs</module>
+        <module>Flume</module>
     </modules>
 
     <parent>
@@ -31,7 +32,7 @@
             <dependency>
                 <groupId>org.hibernate.validator</groupId>
                 <artifactId>hibernate-validator</artifactId>
-                <version>${hibernate.version>}</version>
+                <version>5.3.5.Final</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
