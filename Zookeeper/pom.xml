@@ -86,6 +86,12 @@
             <artifactId>zkclient</artifactId>
             <version>0.9</version>
         </dependency>
+        <!-- json -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.6</version>
+        </dependency>
 
     </dependencies>
 </project>
