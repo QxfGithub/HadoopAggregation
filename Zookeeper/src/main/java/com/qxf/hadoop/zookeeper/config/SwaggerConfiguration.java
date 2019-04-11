@@ -1,9 +1,5 @@
-package com.qxf.hadoop.hbase.config;
+package com.qxf.hadoop.zookeeper.config;
 
-import com.fasterxml.classmate.TypeResolver;
-import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.boot.context.embedded.EmbeddedServletContainerInitializedEvent;
-//import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,23 +21,16 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 /**
  * @author qiuxuefu
- * @since 2019-03-18
+ * @since 2019-04-11
  * @version 0.0.1
  */
 @Configuration
 @EnableSwagger2
-public class SwaggerConfiguration  {//implements ApplicationListener<EmbeddedServletContainerInitializedEvent>
+public class SwaggerConfiguration {
 
-    @Autowired
-    private TypeResolver typeResolver;
-
-    /**
-     * 对外服务swagger文档分组
-     *
-     * @return
-     */
     @Bean
     public Docket createRestApi() {
 
@@ -57,7 +46,7 @@ public class SwaggerConfiguration  {//implements ApplicationListener<EmbeddedSer
         List<Parameter> headerParameter = new ArrayList<Parameter>();
 
         return new Docket(DocumentationType.SWAGGER_2).select()
-                .apis(RequestHandlerSelectors.basePackage("com.qxf")).paths(PathSelectors.any())
+                .apis(RequestHandlerSelectors.basePackage("com.qxf.hadoop.zookeeper")).paths(PathSelectors.any())
                 .build()// .groupName("外部接口")
                 .globalOperationParameters(headerParameter).apiInfo(apiInfo()).useDefaultResponseMessages(false)
                 .globalResponseMessage(RequestMethod.POST, responseMessages)
@@ -69,7 +58,7 @@ public class SwaggerConfiguration  {//implements ApplicationListener<EmbeddedSer
 
     private ApiInfo apiInfo() {
         Contact contact = new Contact("", "", "");
-        return new ApiInfoBuilder().title("HBase web API  DOC").contact(contact).description("HBase服务").build();
+        return new ApiInfoBuilder().title("Hdfs web API  DOC").contact(contact).description("Zookeeper服务").build();
     }
 
     private String getAddress() {
@@ -82,9 +71,5 @@ public class SwaggerConfiguration  {//implements ApplicationListener<EmbeddedSer
         return hostAddress;
     }
 
-   /* @Override
-    public void onApplicationEvent(EmbeddedServletContainerInitializedEvent event) {
-        int serverPort = event.getEmbeddedServletContainer().getPort();
-        System.err.println("swagger访问地址:http://" + getAddress() + ":" + serverPort + "/swagger-ui.html");
-    }*/
+
 }

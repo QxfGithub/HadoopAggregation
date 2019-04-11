@@ -13,6 +13,7 @@
         <module>Hdfs</module>
         <module>Flume</module>
         <module>Hive</module>
+        <module>Zookeeper</module>
     </modules>
 
     <parent>

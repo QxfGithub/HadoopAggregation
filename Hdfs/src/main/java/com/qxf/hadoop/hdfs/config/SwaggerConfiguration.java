@@ -1,7 +1,5 @@
 package com.qxf.hadoop.hdfs.config;
 
-import org.springframework.boot.context.embedded.EmbeddedServletContainerInitializedEvent;
-import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -31,7 +29,7 @@ import java.util.List;
  */
 @Configuration
 @EnableSwagger2
-public class SwaggerConfiguration implements ApplicationListener<EmbeddedServletContainerInitializedEvent> {
+public class SwaggerConfiguration {
 
     @Bean
     public Docket createRestApi() {
@@ -73,9 +71,4 @@ public class SwaggerConfiguration implements ApplicationListener<EmbeddedServlet
         return hostAddress;
     }
 
-    @Override
-    public void onApplicationEvent(EmbeddedServletContainerInitializedEvent event) {
-        int serverPort = event.getEmbeddedServletContainer().getPort();
-        System.err.println("swagger访问地址:http://" + getAddress() + ":" + serverPort + "/swagger-ui.html");
-    }
 }
