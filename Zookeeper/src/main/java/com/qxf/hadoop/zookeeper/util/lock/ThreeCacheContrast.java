@@ -1,4 +1,4 @@
-package com.qxf.hadoop.zookeeper.util;
+package com.qxf.hadoop.zookeeper.util.lock;
 
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
@@ -8,6 +8,9 @@ import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.apache.zookeeper.CreateMode;
 
 /**
+ * @author qiuxuefu
+ * @since 2019-04-11
+ * @version 0.0.1
  * 三种缓存比较 https://blog.csdn.net/Leafage_M/article/details/78735485
  */
 public class ThreeCacheContrast {
